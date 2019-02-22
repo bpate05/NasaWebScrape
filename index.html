@@ -1,0 +1,85 @@
+<!-- Define doctype and language -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Mars_webpage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "row">
+                <div class = "jumbotron">
+                    <h1>Mission to Mars</h1>
+                    <p><a class = "btn-small" href = "/scrape" role = "button"><strong>Scrape New Data</strong></a></p>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-12">
+                    <h2>Latest Mars News:</h2>
+                    <hr>
+                    <h3>{{mars_data.Date-Time}}</h3>
+                    <hr>
+                    <h4>{{mars_data.News_Headline}}</h4>
+                    <hr>
+                    <p>{{mars_data.News_Paragraph}}</p>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-8">
+                    <h2>Featured Mars Image</h2>
+                    <hr>
+                    <img src = "{{mars_data.Feature_Image_URL}}" alt = "Featured Image">
+                </div>
+
+                <div class = "col-md-4">
+                    <h3>Current Mars Weather</h3>
+                    <hr>
+                    <p>{{mars_data.Mars_Current_Weather}}</p>
+                    <hr>
+                    <h3>Mars Facts</h3>
+                    <p>{{mars_data.Mars_Facts_Table}}</p>
+                </div>
+
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-12">
+                    <h2>Mars Hemispheres</h2>
+                </div>
+
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-6">
+                    <img src= "{{mars_data['Mars_Hemispheres'][0]}}" alt = "Hemi-1">
+                </div>
+
+                <div class = "col-md-6">
+                    <img src= "{{mars_data['Mars_Hemispheres'][1]}}" alt = "Hemi-2">
+                </div>
+
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-6">
+                    <img src= "{{mars_data['Mars_Hemispheres'][2]}}" alt = "Hemi-3">
+                </div>
+
+                <div class = "col-md-6">
+                    <img src= "{{mars_data['Mars_Hemispheres'][3]}}" alt = "Hemi-4">
+                </div>
+                
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
