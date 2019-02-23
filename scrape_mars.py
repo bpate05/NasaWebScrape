@@ -39,7 +39,7 @@ def scrape_data():
 
     # click on full image using splinter
     browser.click_link_by_partial_text('FULL IMAGE')
-    time.sleep(1)
+    time.sleep(2)
 
     # click more info button and then get the url for largesize image, combine with base url
     more_info_elem = browser.find_link_by_partial_text('more info')
@@ -140,7 +140,7 @@ def scrape_data():
 
     # add current date and time to mars_dict
     current_dt = dt.datetime.utcnow()
-    mars_dict['Date-Time'] = current_dt
+    mars_dict['Date_Time'] = current_dt
 
     final_dict = {
         'News_Headline': mars_dict['News Title'],
@@ -148,10 +148,9 @@ def scrape_data():
         'Feature_Image_URL': mars_dict['Mars Feature Image URL'],
         'Mars_Current_Weather': mars_dict['Mars Weather Information'],
         'Mars_Facts_Table': mars_dict['Mars Facts Table'],
-        'Mars_Hemispheres': mars_dict['Hemisphere URL'],
-        'Date_Time': mars_dict['Date-Time']
+        'Mars_Hemispheres': mars_dict['Hemisphere URLs'],
+        'Date_Time': mars_dict['Date_Time']
     }
 
-    pprint(final_dict)
     browser.quit()
     return final_dict
